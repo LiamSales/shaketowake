@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ShaketowakeLightMode" parent="android:Theme.Material.Light.NoActionBar" />
+
+    
+        <style name="Theme.Shaketowake" parent="Theme.AppCompat.DayNight.NoActionBar">
+            <!-- Dark mode colors -->
+            <item name="colorPrimary">@color/purple_200</item>
+            <item name="colorPrimaryDark">@color/purple_700</item>
+        </style>
+
+</resources>

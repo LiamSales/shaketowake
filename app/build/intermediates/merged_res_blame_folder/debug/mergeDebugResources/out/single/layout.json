@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.mobdeve.s15.shaketowake.app-mergeDebugResources-53:/layout/layout.xml",
+        "source": "com.mobdeve.s15.shaketowake.app-main-56:/layout/layout.xml"
+    },
+    {
+        "merged": "com.mobdeve.s15.shaketowake.app-mergeDebugResources-53:/layout/item_alarm.xml",
+        "source": "com.mobdeve.s15.shaketowake.app-main-56:/layout/item_alarm.xml"
+    },
+    {
+        "merged": "com.mobdeve.s15.shaketowake.app-mergeDebugResources-53:/layout/activity_alarm_display.xml",
+        "source": "com.mobdeve.s15.shaketowake.app-main-56:/layout/activity_alarm_display.xml"
+    }
+]
