@@ -1,0 +1,33 @@
+# Gradle and build files
+.gradle/
+build/
+app/build/
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Dependency caches
+.cache/
+.prefab/
+.prefab-package/
+
+# Generated files
+bin/
+gen/
+out/
+.gradle/*/generated/
+.gradle/*/kotlin-js-store/
+.gradle/*/kotlin-dsl-accessors/
+.gradle/*/kotlin-dsl/
+.gradle/*/kotlin/script-cache/
+.gradle/*/kotlin/script-tmp/
+
+# Dependency verification
+gradle/verification-metadata.xml
+gradle/verification-keyrings.gpg
+
+# Dependency resolution
+.gradle/*/dependency-graph/
+.gradle/*/dependencies/
+.gradle/*/dependency-locks/
