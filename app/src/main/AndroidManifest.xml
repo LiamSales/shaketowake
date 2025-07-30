@@ -27,6 +27,9 @@
         <activity
             android:name=".AlarmDisplayActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <receiver android:name=".AlarmReceiver" />
+        
     </application>
 
 </manifest>

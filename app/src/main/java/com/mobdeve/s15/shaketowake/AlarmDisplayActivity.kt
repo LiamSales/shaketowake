@@ -1,6 +1,10 @@
 package com.mobdeve.s15.shaketowake
 
-
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
+import kotlin.math.sqrt
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -20,9 +24,36 @@ class AlarmDisplayActivity : AppCompatActivity() {
     private var alarmHour = 0
     private var alarmMinute = 0
 
+    private lateinit var sensorManager: SensorManager
+    private var lastShakeTime: Long = 0L
+    private val shakeThreshold = 12f
+    private val shakeCooldown = 1000 // milliseconds
+
+    private val sensorListener = object : SensorEventListener {
+        override fun onSensorChanged(event: SensorEvent?) {
+            if (event?.sensor?.type == Sensor.TYPE_ACCELEROMETER) {
+                val x = event.values[0]
+                val y = event.values[1]
+                val z = event.values[2]
+
+                val acceleration = sqrt(x * x + y * y + z * z) - SensorManager.GRAVITY_EARTH
+                val currentTime = System.currentTimeMillis()
+
+                if (acceleration > shakeThreshold && currentTime - lastShakeTime > shakeCooldown) {
+                    lastShakeTime = currentTime
+                    finish() // dismiss alarm
+                }
+            }
+        }
+
+        override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alarm_display)
+
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 
         // Get alarm time from intent
         alarmHour = intent.getIntExtra("ALARM_HOUR", 0)
@@ -80,11 +111,13 @@ class AlarmDisplayActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_UI)
         timeHandler.post(timeRunnable)
     }
 
     override fun onPause() {
         super.onPause()
+        sensorManager.unregisterListener(sensorListener)
         timeHandler.removeCallbacks(timeRunnable)
     }
 }
