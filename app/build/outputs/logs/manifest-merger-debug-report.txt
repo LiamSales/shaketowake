@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-35:12
 MERGED from [androidx.databinding:viewbinding:8.10.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\13174f7f72788069a237587517a5ce84\transformed\viewbinding-8.10.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\28428db8c2a5ff0e50341cefc35bc1a1\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\2529737b10a882d532f892367ab4d1a4\transformed\appcompat-1.7.1\AndroidManifest.xml:2:1-7:12
@@ -213,8 +213,8 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\mla\.gradle\caches\
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:5:9-37
 		INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:7:5-30:19
-INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:7:5-30:19
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:7:5-33:19
+INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:7:5-33:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\mla\.gradle\caches\8.11.1\transforms\d5b0dea43ca6d6f7c230a4143c2e7727\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\mla\.gradle\caches\8.11.1\transforms\d5b0dea43ca6d6f7c230a4143c2e7727\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] C:\Users\mla\.gradle\caches\8.11.1\transforms\c9afd6b568591e17b9f34e4e4170ff8d\transformed\ui-test-manifest-1.7.0\AndroidManifest.xml:22:5-26:19
@@ -277,6 +277,10 @@ ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\Android
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:29:13-69
 	android:name
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:28:13-49
+receiver#com.mobdeve.s15.shaketowake.AlarmReceiver
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:31:9-51
+	android:name
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:31:19-48
 activity#androidx.compose.ui.tooling.PreviewActivity
 ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] C:\Users\mla\.gradle\caches\8.11.1\transforms\d5b0dea43ca6d6f7c230a4143c2e7727\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
 	android:exported

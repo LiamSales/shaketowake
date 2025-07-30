@@ -40,6 +40,9 @@
         <activity
             android:name="com.mobdeve.s15.shaketowake.AlarmDisplayActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <receiver android:name="com.mobdeve.s15.shaketowake.AlarmReceiver" />
+
         <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />

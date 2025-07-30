@@ -1,5 +1,6 @@
 package com.mobdeve.s15.shaketowake
 
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import android.media.SoundPool
 
 class AlarmDisplayActivity : AppCompatActivity() {
     private lateinit var currentTimeTextView: TextView
@@ -23,6 +25,9 @@ class AlarmDisplayActivity : AppCompatActivity() {
     private lateinit var timeRunnable: Runnable
     private var alarmHour = 0
     private var alarmMinute = 0
+    private var soundPool: SoundPool? = null
+    private var alarmSoundId: Int = 0
+
 
     private lateinit var sensorManager: SensorManager
     private var lastShakeTime: Long = 0L
@@ -41,7 +46,7 @@ class AlarmDisplayActivity : AppCompatActivity() {
 
                 if (acceleration > shakeThreshold && currentTime - lastShakeTime > shakeCooldown) {
                     lastShakeTime = currentTime
-                    finish() // dismiss alarm
+                    stopAlarmAndGoHome()
                 }
             }
         }
@@ -81,7 +86,10 @@ class AlarmDisplayActivity : AppCompatActivity() {
         }
 
         backButton.setOnClickListener {
-            finish()
+
+            stopAlarmAndGoHome()
+
+
         }
     }
 
@@ -119,5 +127,27 @@ class AlarmDisplayActivity : AppCompatActivity() {
         super.onPause()
         sensorManager.unregisterListener(sensorListener)
         timeHandler.removeCallbacks(timeRunnable)
+    }
+
+
+    private fun stopAlarmAndGoHome() {
+
+        soundPool?.apply {
+            pause(alarmSoundId) // Immediate stop
+            setVolume(alarmSoundId, 0f, 0f) // Ensure no residual sound
+        }
+        // Stop sound playback
+        soundPool?.stop(alarmSoundId)
+
+        // Release resources
+        soundPool?.release()
+
+        soundPool = null
+        // Redirect to MainActivity
+        val intent = Intent(this, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        startActivity(intent)
+        finish()
     }
 }

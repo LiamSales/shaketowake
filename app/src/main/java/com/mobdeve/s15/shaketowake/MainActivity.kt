@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout)
-
+        AlarmReceiver.preloadSoundPool(this)
         timePicker = findViewById(R.id.timePicker)
         alarmsRecyclerView = findViewById(R.id.alarmsRecyclerView)
 

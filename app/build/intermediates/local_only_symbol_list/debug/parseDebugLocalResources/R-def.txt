@@ -23,6 +23,7 @@ layout item_alarm
 layout layout
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw alarm_sound
 string app_name
 style Theme.Shaketowake
 style Theme.ShaketowakeLightMode
