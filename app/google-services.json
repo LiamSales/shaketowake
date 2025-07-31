@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "571255811031",
+    "project_id": "mobicom-ff5b0",
+    "storage_bucket": "mobicom-ff5b0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571255811031:android:6477139daea67f133e7992",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s15.shaketowake"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4OMdhRS6-aRXelkLLe8rl0W1EukJNORM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
