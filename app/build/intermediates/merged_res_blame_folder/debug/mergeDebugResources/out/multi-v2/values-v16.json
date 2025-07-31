@@ -4,7 +4,7 @@
             "outputFile": "com.mobdeve.s15.shaketowake.app-mergeDebugResources-52:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mla\\.gradle\\caches\\8.11.1\\transforms\\2529737b10a882d532f892367ab4d1a4\\transformed\\appcompat-1.7.1\\res\\values-v16\\values-v16.xml",
+                    "source": "/Users/mez/.gradle/caches/8.11.1/transforms/2529737b10a882d532f892367ab4d1a4/transformed/appcompat-1.7.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
