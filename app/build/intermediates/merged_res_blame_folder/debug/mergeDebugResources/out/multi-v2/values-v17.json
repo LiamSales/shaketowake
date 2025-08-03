@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.mobdeve.s15.shaketowake.app-mergeDebugResources-52:/values-v17/values-v17.xml",
+            "outputFile": "com.mobdeve.s15.shaketowake.app-mergeDebugResources-55:/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "/Users/mez/.gradle/caches/8.11.1/transforms/2529737b10a882d532f892367ab4d1a4/transformed/appcompat-1.7.1/res/values-v17/values-v17.xml",
+                    "source": "C:\\Users\\liams\\.gradle\\caches\\8.11.1\\transforms\\9c8f3186271b46259f7e922e46809a8c\\transformed\\appcompat-1.7.1\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

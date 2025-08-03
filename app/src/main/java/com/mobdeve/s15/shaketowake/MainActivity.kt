@@ -142,8 +142,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Alarm set successfully", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e ->
-                Log.w("Firebase", "Error saving alarm", e)
-                Toast.makeText(this, "Failed to save alarm", Toast.LENGTH_SHORT).show()
+                val errorMessage = "Error saving alarm: ${e.message}"
+                Log.e("Firebase", errorMessage, e)
+                Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
                 // Fallback to local storage
                 saveAlarmsToLocal()
             }

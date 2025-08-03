@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.media.AudioAttributes
 import android.media.SoundPool
-import android.os.Build
 
 class AlarmReceiver : BroadcastReceiver() {
     companion object {
@@ -46,6 +45,7 @@ class AlarmReceiver : BroadcastReceiver() {
             putExtra("ALARM_HOUR", intent.getIntExtra("ALARM_HOUR", 0))
             putExtra("ALARM_MINUTE", intent.getIntExtra("ALARM_MINUTE", 0))
         }
+
         context.startActivity(alarmIntent)
     }
 }

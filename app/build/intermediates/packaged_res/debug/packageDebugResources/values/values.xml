@@ -8,6 +8,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Shaketowake</string>
+    <string name="gcm_defaultSenderId" translatable="false">571255811031</string>
+    <string name="google_api_key" translatable="false">AIzaSyA4OMdhRS6-aRXelkLLe8rl0W1EukJNORM</string>
+    <string name="google_app_id" translatable="false">1:571255811031:android:6477139daea67f133e7992</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA4OMdhRS6-aRXelkLLe8rl0W1EukJNORM</string>
+    <string name="google_storage_bucket" translatable="false">mobicom-ff5b0.firebasestorage.app</string>
+    <string name="project_id" translatable="false">mobicom-ff5b0</string>
     <style name="Theme.Shaketowake" parent="Theme.AppCompat.DayNight.NoActionBar">
             
             <item name="colorPrimary">@color/purple_200</item>
