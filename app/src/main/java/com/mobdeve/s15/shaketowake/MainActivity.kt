@@ -11,6 +11,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TimePicker
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.Calendar
+import com.google.firebase.firestore.Query
 
 data class AlarmData(
     val id: String = "",
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     private val alarmTimes = mutableListOf<String>()
     private lateinit var adapter: AlarmAdapter
     private lateinit var db: FirebaseFirestore
-    private val userId = "user_${System.currentTimeMillis()}" // Simple user ID - replace with proper auth
+    private val userId = "user_1"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         // Initialize Firebase
         db = Firebase.firestore
+        Log.d("MainActivity", "Using userId: $userId") // ADD THIS
 
         // Check and request exact alarm permission
         checkExactAlarmPermission()
@@ -53,10 +56,29 @@ class MainActivity : AppCompatActivity() {
         adapter = AlarmAdapter(
             onAlarmClick = { timeString ->
                 val parts = timeString.split(":")
-                timePicker.hour = parts[0].toInt()
-                timePicker.minute = parts[1].toInt()
+                val hour = parts[0].toInt()
+                val minute = parts[1].toInt()
+
+                timePicker.hour = hour
+                timePicker.minute = minute
+
+                AlertDialog.Builder(this)
+                    .setTitle("Reschedule Alarm")
+                    .setMessage("Do you want to reschedule the alarm for $timeString?")
+                    .setPositiveButton("Yes") { _, _ ->
+                        if (canScheduleExactAlarms()) {
+                            saveAlarmToFirebase(hour, minute, timeString)
+                            setSystemAlarm(hour, minute, timeString)
+                            Toast.makeText(this, "Alarm rescheduled for $timeString", Toast.LENGTH_SHORT).show()
+                        } else {
+                            requestExactAlarmPermission()
+                            Toast.makeText(this, "Permission needed to set exact alarm", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                    .setNegativeButton("Cancel", null)
+                    .show()
             },
-            onDeleteClick = { timeString ->
+                    onDeleteClick = { timeString ->
                 deleteAlarmFromFirebase(timeString)
             }
         )
@@ -64,6 +86,7 @@ class MainActivity : AppCompatActivity() {
         alarmsRecyclerView.layoutManager = LinearLayoutManager(this)
         alarmsRecyclerView.adapter = adapter
 
+        Log.d("MainActivity", "Loading alarms from Firebase...")
         // Load alarms from Firebase instead of SharedPreferences
         loadAlarmsFromFirebase()
 
@@ -71,6 +94,8 @@ class MainActivity : AppCompatActivity() {
             val hour = timePicker.hour
             val minute = timePicker.minute
             val newTime = String.format("%02d:%02d", hour, minute)
+
+            Log.d("MainActivity", "Setting alarm: $newTime") // ADD LOGGING
 
             if (!alarmTimes.contains(newTime)) {
                 // Check permission before setting alarm
@@ -84,6 +109,8 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "Please allow exact alarm permission", Toast.LENGTH_LONG).show()
                     requestExactAlarmPermission()
                 }
+            } else {
+                Toast.makeText(this, "Alarm already exists", Toast.LENGTH_SHORT).show() // ADD THIS LINE
             }
 
             val intent = Intent(this, AlarmDisplayActivity::class.java).apply {
@@ -120,6 +147,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveAlarmToFirebase(hour: Int, minute: Int, timeString: String) {
+        Log.d("Firebase", "=== SAVING ALARM DEBUG ===")
+        Log.d("Firebase", "User ID: $userId")
+        Log.d("Firebase", "Time String: $timeString")
+        Log.d("Firebase", "Hour: $hour, Minute: $minute")
+
         val alarmData = AlarmData(
             id = timeString.hashCode().toString(),
             hour = hour,
@@ -129,76 +161,110 @@ class MainActivity : AppCompatActivity() {
             timestamp = System.currentTimeMillis()
         )
 
+        Log.d("Firebase", "Alarm Data: $alarmData")
+        Log.d("Firebase", "Document path: users/$userId/alarms/${alarmData.id}")
+
         db.collection("users")
             .document(userId)
             .collection("alarms")
             .document(alarmData.id)
             .set(alarmData)
             .addOnSuccessListener {
-                Log.d("Firebase", "Alarm saved successfully")
-                // Update local list and UI
-                alarmTimes.add(0, timeString)
-                adapter.submitList(alarmTimes.toList())
+                Log.d("Firebase", "✅ SAVE SUCCESS: Alarm saved to Firestore")
+                Log.d("Firebase", "Document ID: ${alarmData.id}")
                 Toast.makeText(this, "Alarm set successfully", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e ->
-                val errorMessage = "Error saving alarm: ${e.message}"
-                Log.e("Firebase", errorMessage, e)
-                Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+                Log.e("Firebase", "❌ SAVE FAILED: ${e.message}", e)
+                Toast.makeText(this, "Error saving alarm: ${e.message}", Toast.LENGTH_LONG).show()
+
                 // Fallback to local storage
+                alarmTimes.add(0, timeString)
+                adapter.submitList(alarmTimes.toList())
                 saveAlarmsToLocal()
             }
     }
 
     private fun loadAlarmsFromFirebase() {
+        Log.d("Firebase", "=== LOADING ALARMS DEBUG ===")
+        Log.d("Firebase", "User ID: $userId")
+        Log.d("Firebase", "Collection path: users/$userId/alarms")
+
         db.collection("users")
             .document(userId)
             .collection("alarms")
-            .whereEqualTo("isActive", true)
-            .orderBy("timestamp")
+            .orderBy("timestamp", com.google.firebase.firestore.Query.Direction.DESCENDING)
             .addSnapshotListener { snapshot, e ->
                 if (e != null) {
-                    Log.w("Firebase", "Listen failed.", e)
-                    // Fallback to local storage
+                    Log.e("Firebase", "❌ LISTEN FAILED: ${e.message}", e)
+                    Log.d("Firebase", "Falling back to local storage")
                     loadAlarmsFromLocal()
                     return@addSnapshotListener
                 }
 
+                Log.d("Firebase", "✅ SNAPSHOT RECEIVED")
+                Log.d("Firebase", "Snapshot null: ${snapshot == null}")
+                Log.d("Firebase", "Snapshot empty: ${snapshot?.isEmpty}")
+                Log.d("Firebase", "Document count: ${snapshot?.documents?.size ?: 0}")
+
                 if (snapshot != null) {
-                    alarmTimes.clear()
-                    for (document in snapshot.documents) {
+                    // Log all documents found
+                    snapshot.documents.forEachIndexed { index, document ->
+                        Log.d("Firebase", "Document $index: ${document.id}")
+                        Log.d("Firebase", "Document $index data: ${document.data}")
+
                         val alarmData = document.toObject(AlarmData::class.java)
-                        alarmData?.let {
-                            alarmTimes.add(it.timeString)
-                        }
+                        Log.d("Firebase", "Document $index as AlarmData: $alarmData")
                     }
-                    adapter.submitList(alarmTimes.toList())
+
+                    if (!snapshot.isEmpty) {
+                        Log.d("Firebase", "Processing ${snapshot.documents.size} alarms")
+                        alarmTimes.clear()
+
+                        for (document in snapshot.documents) {
+                            val alarmData = document.toObject(AlarmData::class.java)
+                            alarmData?.let {
+                                Log.d("Firebase", "Adding alarm: ${it.timeString}")
+                                alarmTimes.add(it.timeString)
+                            } ?: Log.w("Firebase", "Failed to convert document to AlarmData: ${document.id}")
+                        }
+
+                        Log.d("Firebase", "Final alarm list: $alarmTimes")
+                        adapter.submitList(alarmTimes.toList())
+                        Log.d("Firebase", "✅ UI updated with ${alarmTimes.size} alarms")
+                    } else {
+                        Log.d("Firebase", "Snapshot is empty - no alarms found")
+                        alarmTimes.clear()
+                        adapter.submitList(alarmTimes.toList())
+                    }
                 } else {
-                    Log.d("Firebase", "Current data: null")
+                    Log.w("Firebase", "Snapshot is null")
                 }
             }
     }
 
     private fun deleteAlarmFromFirebase(timeString: String) {
         val alarmId = timeString.hashCode().toString()
+        Log.d("Firebase", "Deleting alarm: $timeString (ID: $alarmId)") // ADD LOGGING
 
         db.collection("users")
             .document(userId)
             .collection("alarms")
             .document(alarmId)
-            .update("isActive", false)
+            .delete()
             .addOnSuccessListener {
-                Log.d("Firebase", "Alarm deleted successfully")
-                // Update local list
+                Log.d("Firebase", "Alarm deleted successfully: $timeString")
+                Toast.makeText(this, "Alarm deleted", Toast.LENGTH_SHORT).show()
+
+                // Remove from list and UI
                 alarmTimes.remove(timeString)
                 adapter.submitList(alarmTimes.toList())
-                Toast.makeText(this, "Alarm deleted", Toast.LENGTH_SHORT).show()
 
                 // Cancel system alarm
                 cancelSystemAlarm(timeString)
             }
             .addOnFailureListener { e ->
-                Log.w("Firebase", "Error deleting alarm", e)
+                Log.w("Firebase", "Error deleting alarm: ${e.message}", e)
                 Toast.makeText(this, "Failed to delete alarm", Toast.LENGTH_SHORT).show()
             }
     }
