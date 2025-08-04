@@ -984,6 +984,8 @@ int layout select_dialog_multichoice_material 0x7f0b002b
 int layout select_dialog_singlechoice_material 0x7f0b002c
 int layout support_simple_spinner_dropdown_item 0x7f0b002d
 int mipmap ic_launcher 0x7f0c0000
+int mipmap ic_launcher_background 0x7f0c0002
+int mipmap ic_launcher_foreground 0x7f0c0003
 int mipmap ic_launcher_round 0x7f0c0001
 int raw alarm_sound 0x7f0d0000
 int raw firebase_common_keep 0x7f0d0001

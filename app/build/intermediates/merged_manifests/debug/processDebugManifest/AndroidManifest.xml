@@ -38,6 +38,7 @@
         android:label="Shaketowake"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:taskAffinity=""
         android:testOnly="true"
         android:theme="@style/Theme.Shaketowake" >
         <activity

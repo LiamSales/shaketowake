@@ -27,7 +27,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_alarm_display.xml">
         <config>
-          <theme>@style/Theme.ShaketoWake</theme>
+          <theme>@style/Theme.Shaketowake</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_alarm.xml">
@@ -45,6 +45,11 @@
           <theme>@style/Theme.Shaketowake</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">
+        <config>
+          <theme>@style/Theme.Shaketowake</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
@@ -52,14 +57,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc9d4cfb-f39d-4ce1-b4a2-65cf8964c66f" name="Changes" comment="added database functions">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/processDebugGoogleServices/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/res/processDebugGoogleServices/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/dexBuilderDebug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/dexBuilderDebug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir/layout/activity_alarm_display.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir/layout/activity_alarm_display.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-anydpi-v26_ic_launcher.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-anydpi-v26_ic_launcher.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-anydpi-v26_ic_launcher_round.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-anydpi-v26_ic_launcher_round.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher_round.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher_round.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher_round.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher_round.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher_round.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher_round.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher_round.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher_round.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher_round.webp.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher_round.webp.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-hdpi-v4/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-hdpi-v4/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-hdpi-v4/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-hdpi-v4/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-mdpi-v4/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-mdpi-v4/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-mdpi-v4/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-mdpi-v4/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xhdpi-v4/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xhdpi-v4/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xhdpi-v4/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xhdpi-v4/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxhdpi-v4/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxhdpi-v4/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxhdpi-v4/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxhdpi-v4/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxxhdpi-v4/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxxhdpi-v4/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxxhdpi-v4/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxxhdpi-v4/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/45c60e061b163c39e8e1e9e464b4bd1a8402a27c90d6b5f2391d0b1efe671283_0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/45c60e061b163c39e8e1e9e464b4bd1a8402a27c90d6b5f2391d0b1efe671283_1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/45c60e061b163c39e8e1e9e464b4bd1a8402a27c90d6b5f2391d0b1efe671283_2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/45c60e061b163c39e8e1e9e464b4bd1a8402a27c90d6b5f2391d0b1efe671283_3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/ActivityAlarmDisplayBinding.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/ItemAlarmBinding.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/LayoutBinding.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mobdeve/s15/shaketowake/AlarmDisplayActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mobdeve/s15/shaketowake/AlarmDisplayActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mobdeve/s15/shaketowake/AlarmReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mobdeve/s15/shaketowake/AlarmReceiver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mobdeve/s15/shaketowake/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mobdeve/s15/shaketowake/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +143,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\mla\.android\avd\Pixel_2.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=c3a5adfd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />

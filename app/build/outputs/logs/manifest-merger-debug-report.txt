@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-54:12
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:2:1-55:12
 MERGED from [androidx.databinding:viewbinding:8.10.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\f6acd967306b844e9ede6a8ea7bddc4e\transformed\viewbinding-8.10.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\7ba40025c6e1d52306e216e9910104b3\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\9c8f3186271b46259f7e922e46809a8c\transformed\appcompat-1.7.1\AndroidManifest.xml:2:1-7:12
@@ -309,8 +309,8 @@ MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\mla\.gradle\caches\8.11.1\tra
 	android:name
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:17:22-76
 application
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:19:5-52:19
-INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:19:5-52:19
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:19:5-53:19
+INJECTED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:19:5-53:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\51c2130fb9a100a12723c389839a9470\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\51c2130fb9a100a12723c389839a9470\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\53ce0ddd99781aa14dc22423a5df7ba8\transformed\ui-test-manifest-1.6.1\AndroidManifest.xml:22:5-26:19
@@ -356,7 +356,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.16.0] C:\Users\mla\.gradle\caches\8.11.1\transforms\49b2f500390da2b8dd9a60f6d5151eb6\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:26:9-35
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:27:9-35
 	android:label
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:24:9-36
 	android:fullBackupContent
@@ -364,51 +364,53 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ml
 	android:roundIcon
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:25:9-54
 	tools:targetApi
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:28:9-29
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:29:9-29
 	android:icon
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:23:9-43
 	android:allowBackup
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:20:9-35
 	android:theme
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:27:9-49
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:28:9-49
 	android:dataExtractionRules
 		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:21:9-65
+	android:taskAffinity
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:26:9-32
 activity#com.mobdeve.s15.shaketowake.MainActivity
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:30:9-38:20
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:31:9-39:20
 	android:exported
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:32:13-36
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:33:13-36
 	android:theme
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:33:13-53
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:34:13-53
 	android:name
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:31:13-41
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:32:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:34:13-37:29
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:35:13-38:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:35:17-69
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:36:17-69
 	android:name
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:35:25-66
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:36:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:36:17-77
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:37:17-77
 	android:name
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:36:27-74
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:37:27-74
 activity#com.mobdeve.s15.shaketowake.AlarmDisplayActivity
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:40:9-46:20
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:41:9-47:20
 	android:turnScreenOn
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:43:13-40
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:44:13-40
 	android:excludeFromRecents
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:44:13-46
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:45:13-46
 	android:showOnLockScreen
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:42:13-44
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:43:13-44
 	android:theme
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:45:13-51
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:46:13-51
 	android:name
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:41:13-49
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:42:13-49
 receiver#com.mobdeve.s15.shaketowake.AlarmReceiver
-ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:48:9-50:40
+ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:49:9-51:40
 	android:exported
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:50:13-37
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:51:13-37
 	android:name
-		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:49:13-42
+		ADDED from C:\Users\mla\Documents\micole\coding\shaketowake\app\src\main\AndroidManifest.xml:50:13-42
 activity#androidx.compose.ui.tooling.PreviewActivity
 ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] C:\Users\mla\.gradle\caches\8.11.1\transforms\51c2130fb9a100a12723c389839a9470\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
 	android:exported

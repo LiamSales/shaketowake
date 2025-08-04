@@ -22,6 +22,8 @@ layout activity_alarm_display
 layout item_alarm
 layout layout
 mipmap ic_launcher
+mipmap ic_launcher_background
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 raw alarm_sound
 string app_name

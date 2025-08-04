@@ -23,6 +23,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Shaketowake"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:taskAffinity=""
         android:supportsRtl="true"
         android:theme="@style/Theme.Shaketowake"
         tools:targetApi="31">
