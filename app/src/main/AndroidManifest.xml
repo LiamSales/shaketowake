@@ -5,12 +5,10 @@
     <uses-sdk android:minSdkVersion="23" />
 
     <!-- Alarm permissions -->
-    <!-- For API 31+ (Android 12+) - user needs to grant this permission -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-
-    <!-- For API 33+ (Android 13+) - automatically granted for alarm/timer apps -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
-
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
@@ -41,7 +39,11 @@
 
         <activity
             android:name=".AlarmDisplayActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:excludeFromRecents="true"
+            android:theme="@style/FullScreenTheme">
+        </activity>
 
         <receiver
             android:name=".AlarmReceiver"

@@ -4,7 +4,6 @@ package com.mobdeve.s15.shaketowake.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -24,17 +23,12 @@ public final class ActivityAlarmDisplayBinding implements ViewBinding {
   public final TextView alarmTimeTextView;
 
   @NonNull
-  public final Button backButton;
-
-  @NonNull
   public final TextView currentTimeTextView;
 
   private ActivityAlarmDisplayBinding(@NonNull LinearLayout rootView,
-      @NonNull TextView alarmTimeTextView, @NonNull Button backButton,
-      @NonNull TextView currentTimeTextView) {
+      @NonNull TextView alarmTimeTextView, @NonNull TextView currentTimeTextView) {
     this.rootView = rootView;
     this.alarmTimeTextView = alarmTimeTextView;
-    this.backButton = backButton;
     this.currentTimeTextView = currentTimeTextView;
   }
 
@@ -71,19 +65,13 @@ public final class ActivityAlarmDisplayBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.backButton;
-      Button backButton = ViewBindings.findChildViewById(rootView, id);
-      if (backButton == null) {
-        break missingId;
-      }
-
       id = R.id.currentTimeTextView;
       TextView currentTimeTextView = ViewBindings.findChildViewById(rootView, id);
       if (currentTimeTextView == null) {
         break missingId;
       }
 
-      return new ActivityAlarmDisplayBinding((LinearLayout) rootView, alarmTimeTextView, backButton,
+      return new ActivityAlarmDisplayBinding((LinearLayout) rootView, alarmTimeTextView,
           currentTimeTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);

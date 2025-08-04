@@ -687,6 +687,7 @@ drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_alarm
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -781,7 +782,6 @@ id always
 id androidx_compose_ui_view_composition_context
 id async
 id auto
-id backButton
 id beginning
 id blocking
 id bottom
@@ -1293,6 +1293,7 @@ style Base_Widget_AppCompat_Toolbar_Button_Navigation
 style DialogWindowTheme
 style FloatingDialogTheme
 style FloatingDialogWindowTheme
+style FullScreenTheme
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat

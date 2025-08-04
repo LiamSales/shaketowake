@@ -1,5 +1,6 @@
 package com.mobdeve.s15.shaketowake
 
+import android.content.Context
 import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -17,6 +18,9 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 import android.media.SoundPool
+import android.os.Build
+import android.os.PowerManager
+import android.view.WindowManager
 
 class AlarmDisplayActivity : AppCompatActivity() {
     private lateinit var currentTimeTextView: TextView
@@ -33,6 +37,7 @@ class AlarmDisplayActivity : AppCompatActivity() {
     private var lastShakeTime: Long = 0L
     private val shakeThreshold = 12f
     private val shakeCooldown = 1000 // milliseconds
+    private var wakeLock: PowerManager.WakeLock? = null
 
     private val sensorListener = object : SensorEventListener {
         override fun onSensorChanged(event: SensorEvent?) {
@@ -56,6 +61,19 @@ class AlarmDisplayActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+            setShowWhenLocked(true)
+            setTurnScreenOn(true)
+        } else {
+            window.addFlags(
+                WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or
+                        WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+            )
+        }
+
+        // Keep screen on
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         setContentView(R.layout.activity_alarm_display)
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
@@ -66,7 +84,7 @@ class AlarmDisplayActivity : AppCompatActivity() {
 
         currentTimeTextView = findViewById(R.id.currentTimeTextView)
         alarmTimeTextView = findViewById(R.id.alarmTimeTextView)
-        val backButton = findViewById<Button>(R.id.backButton)
+
 
         // Set black background
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.black))
@@ -85,11 +103,16 @@ class AlarmDisplayActivity : AppCompatActivity() {
             }
         }
 
-        backButton.setOnClickListener {
 
-            stopAlarmAndGoHome()
-
-
+        val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
+        wakeLock = powerManager.newWakeLock(
+            PowerManager.PARTIAL_WAKE_LOCK or PowerManager.ACQUIRE_CAUSES_WAKEUP,
+            "ShakeToWake::AlarmWakeLock"
+        )
+        wakeLock?.isHeld()?.let {
+            if (!it == true) {
+                wakeLock?.acquire(10 * 60 * 1000L /*10 minutes*/)
+            }
         }
     }
 
@@ -131,18 +154,24 @@ class AlarmDisplayActivity : AppCompatActivity() {
 
 
     private fun stopAlarmAndGoHome() {
-
         soundPool?.apply {
-            pause(alarmSoundId) // Immediate stop
-            setVolume(alarmSoundId, 0f, 0f) // Ensure no residual sound
+            pause(alarmSoundId)
+            setVolume(alarmSoundId, 0f, 0f)
         }
-        // Stop sound playback
         soundPool?.stop(alarmSoundId)
-
-        // Release resources
         soundPool?.release()
-
         soundPool = null
+
+        wakeLock?.let {
+            if (it.isHeld) {
+                it.release()
+            }
+        }
+        wakeLock = null
+
+        // Stop the foreground service
+        AlarmForegroundService.stopService(this)
+
         // Redirect to MainActivity
         val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK

@@ -280,7 +280,6 @@ class MainActivity : AppCompatActivity() {
             set(Calendar.MINUTE, minute)
             set(Calendar.SECOND, 0)
 
-            // If the time has already passed today, schedule for tomorrow
             if (timeInMillis <= System.currentTimeMillis()) {
                 add(Calendar.DAY_OF_MONTH, 1)
             }
@@ -292,14 +291,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         val pendingIntent = PendingIntent.getBroadcast(
-            this, timeString.hashCode(), alarmIntent,
+            this,
+            timeString.hashCode(),
+            alarmIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
         val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
 
         try {
-            alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                alarmManager.setExactAndAllowWhileIdle(
+                    AlarmManager.RTC_WAKEUP,
+                    calendar.timeInMillis,
+                    pendingIntent
+                )
+            } else {
+                alarmManager.setExact(
+                    AlarmManager.RTC_WAKEUP,
+                    calendar.timeInMillis,
+                    pendingIntent
+                )
+            }
             Log.d("Alarm", "Alarm set for ${calendar.time}")
         } catch (e: SecurityException) {
             Log.e("Alarm", "Security exception when setting alarm", e)
@@ -307,7 +320,6 @@ class MainActivity : AppCompatActivity() {
             requestExactAlarmPermission()
         }
     }
-
     private fun cancelSystemAlarm(timeString: String) {
         val alarmIntent = Intent(this, AlarmReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(

@@ -22,12 +22,5 @@
         android:textSize="24sp"
         android:textColor="@android:color/white"/>
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="@android:color/white"
-        android:text="SHAKE"
-        android:textColor="@android:color/black" />
+
 </LinearLayout>

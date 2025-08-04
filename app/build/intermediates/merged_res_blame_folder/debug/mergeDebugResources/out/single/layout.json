@@ -4,11 +4,15 @@
         "source": "com.mobdeve.s15.shaketowake.app-main-59:/layout/activity_alarm_display.xml"
     },
     {
-        "merged": "com.mobdeve.s15.shaketowake.app-mergeDebugResources-56:/layout/item_alarm.xml",
-        "source": "com.mobdeve.s15.shaketowake.app-main-59:/layout/item_alarm.xml"
+        "merged": "C:\\Users\\mla\\.gradle\\daemon\\8.11.1\\com.mobdeve.s15.shaketowake.app-mergeDebugResources-56:\\layout\\activity_alarm_display.xml",
+        "source": "C:\\Users\\mla\\.gradle\\daemon\\8.11.1\\com.mobdeve.s15.shaketowake.app-main-59:\\layout\\activity_alarm_display.xml"
     },
     {
-        "merged": "com.mobdeve.s15.shaketowake.app-mergeDebugResources-56:/layout/layout.xml",
-        "source": "com.mobdeve.s15.shaketowake.app-main-59:/layout/layout.xml"
+        "merged": "C:\\Users\\mla\\.gradle\\daemon\\8.11.1\\com.mobdeve.s15.shaketowake.app-mergeDebugResources-56:\\layout\\layout.xml",
+        "source": "C:\\Users\\mla\\.gradle\\daemon\\8.11.1\\com.mobdeve.s15.shaketowake.app-main-59:\\layout\\layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\mla\\.gradle\\daemon\\8.11.1\\com.mobdeve.s15.shaketowake.app-mergeDebugResources-56:\\layout\\item_alarm.xml",
+        "source": "C:\\Users\\mla\\.gradle\\daemon\\8.11.1\\com.mobdeve.s15.shaketowake.app-main-59:\\layout\\item_alarm.xml"
     }
 ]
